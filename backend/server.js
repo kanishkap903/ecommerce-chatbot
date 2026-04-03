@@ -17,7 +17,9 @@ app.use(express.json());
 
 mongoose.connect("mongodb+srv://admin:kanishka123@cluster0.rwaipkt.mongodb.net/ecommerce")
   .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .catch(err => {
+    console.log("MongoDB ERROR:", err);
+  });
 
 // ✅ ROUTES
 app.use("/api/products", productRoutes);
