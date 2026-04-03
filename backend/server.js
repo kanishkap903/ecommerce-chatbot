@@ -14,7 +14,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ USE ATLAS (IMPORTANT)
+
 mongoose.connect("mongodb+srv://admin:kanishka123@cluster0.rwaipkt.mongodb.net/ecommerce")
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
