@@ -19,7 +19,7 @@ API Requests: Axios
 Styling: CSS
 💾 Installation & Setup
 1. Clone the repository
-git clone https://github.com/yourusername/ecommerce-chatbot.git
+git clone https://github.com/kanishkap903/ecommerce-chatbot
 cd ecommerce-chatbot
 2. Backend Setup
 cd backend
