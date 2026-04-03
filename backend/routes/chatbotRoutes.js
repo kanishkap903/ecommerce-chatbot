@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-// Dummy products (you can later connect DB)
+// Dummy products
 const products = [
   { name: "shoes", price: 2000 },
   { name: "laptop", price: 50000 },
@@ -19,23 +19,27 @@ router.post("/", (req, res) => {
   }
 
   // Product search
-  else if (msg.includes("shoes") || msg.includes("laptop") || msg.includes("phone")) {
-    const result = products.filter(p => msg.includes(p.name));
-    reply = result.length > 0 
-  ? result.map(p => `${p.name} - ₹${p.price}`).join(", ")
-  : "No products found";
+  else if (
+    msg.includes("shoes") ||
+    msg.includes("laptop") ||
+    msg.includes("phone")
+  ) {
+    const result = products.filter((p) => msg.includes(p.name));
+    reply =
+      result.length > 0
+        ? result.map((p) => `${p.name} - ₹${p.price}`).join(", ")
+        : "No products found";
   }
 
   // Cheap products
   else if (msg.includes("cheap") || msg.includes("under")) {
-    const cheap = products.filter(p => p.price < 20000);
-    reply = cheap.map(p => `${p.name} - ₹${p.price}`).join(", ");
+    const cheap = products.filter((p) => p.price < 20000);
+    reply = cheap.map((p) => `${p.name} - ₹${p.price}`).join(", ");
   }
 
   // Cart help
- else if (msg.includes("cart")) {
-  reply = "Opening cart... 🛒";
-
+  else if (msg.includes("cart")) {
+    reply = "Opening cart... 🛒";
   }
 
   // Default

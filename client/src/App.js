@@ -8,7 +8,6 @@ import Chatbot from "./components/Chatbot";
 function App() {
   const [cart, setCart] = useState([]);
 
-  // 🔥 FETCH CART FROM BACKEND
   useEffect(() => {
     fetch("https://ecommerce-chatbot-7k66.onrender.com/api/cart")
       .then(res => res.json())

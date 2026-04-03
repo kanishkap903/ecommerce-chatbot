@@ -9,9 +9,10 @@ const Chatbot = () => {
     if (!message) return;
 
     try {
-      const res = await axios.post("https://ecommerce-chatbot-7k66.onrender.com/api/chat", {
-        message
-      });
+      const res = await axios.post(
+        "https://ecommerce-chatbot-7k66.onrender.com/api/chat",
+        { message }
+      );
 
       setChat((prev) => [
         ...prev,
@@ -29,25 +30,32 @@ const Chatbot = () => {
     <div style={{ padding: "20px" }}>
       <h2>🤖 Chatbot</h2>
 
-      <div style={{
-        border: "1px solid #ccc",
-        padding: "10px",
-        height: "300px",
-        overflowY: "scroll",
-        marginBottom: "10px"
-      }}>
+      <div
+        style={{
+          border: "1px solid #ccc",
+          padding: "10px",
+          height: "300px",
+          overflowY: "scroll",
+          marginBottom: "10px"
+        }}
+      >
         {chat.map((c, i) => (
-          <div key={i} style={{
-            textAlign: c.type === "user" ? "right" : "left",
-            margin: "5px"
-          }}>
-            <span style={{
-              display: "inline-block",
-              padding: "8px",
-              borderRadius: "10px",
-              background: c.type === "user" ? "#007bff" : "#eee",
-              color: c.type === "user" ? "#fff" : "#000"
-            }}>
+          <div
+            key={i}
+            style={{
+              textAlign: c.type === "user" ? "right" : "left",
+              margin: "5px"
+            }}
+          >
+            <span
+              style={{
+                display: "inline-block",
+                padding: "8px",
+                borderRadius: "10px",
+                background: c.type === "user" ? "#007bff" : "#eee",
+                color: c.type === "user" ? "#fff" : "#000"
+              }}
+            >
               {c.text}
             </span>
           </div>

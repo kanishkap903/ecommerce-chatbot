@@ -11,12 +11,15 @@ const Checkout = ({ cart }) => {
 
   const handleOrder = async () => {
     try {
-      await axios.post("http://localhost:5000/order/create", {
-        userId: "123",
-        items: cart,
-        totalAmount,
-        address
-      });
+      await axios.post(
+        "https://ecommerce-chatbot-7k66.onrender.com/api/order/create",
+        {
+          userId: "123",
+          items: cart,
+          totalAmount,
+          address,
+        }
+      );
 
       alert("Order Placed Successfully!");
     } catch (err) {
